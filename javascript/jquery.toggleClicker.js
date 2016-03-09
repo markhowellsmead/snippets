@@ -1,6 +1,6 @@
 (function($,undefined){
-	$.fn.extend({
-		toggleClicker: function() {
+    $.fn.extend({
+        toggleClicker: function() {
             $(this).off('click.toggled').on('click.toggled', function(e){
                 if( $(this).data('target') ){
                     e.preventDefault();
@@ -10,12 +10,12 @@
                     if( !$target.hasClass('is-closed') ){
                         var destination = $target.offset().top - anchorAnimateOffset;
                         setTimeout(function(){
-                		    $('html:not(:animated),body:not(:animated)').animate({ scrollTop: destination}, 600);
+                            $('html:not(:animated),body:not(:animated)').animate({ scrollTop: destination}, 600);
                         }, 300);
                     }
                 }
             });
-			return this;
-		}
-	});
+            return this;
+        }
+    });
 })(jQuery);
